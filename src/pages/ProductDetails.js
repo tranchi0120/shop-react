@@ -18,7 +18,6 @@ const ProductDetails = () => {
   const product = products.find((item) => {
     return item.id === parseInt(id);
   });
-  
 
   if (!product) {
     return (
@@ -44,7 +43,9 @@ const ProductDetails = () => {
             <h1 className="text-[26px] font-medium mb-2 max-w-[450px] mx-auto lg:mx-0">
               {title}
             </h1>
-            <div className="text-xl text-red-500 font-medium mb-6">{price}</div>
+            <div className="text-xl text-red-500 font-medium mb-6">
+              $ {price}
+            </div>
             <p className="mb-8">{description}</p>
             <button
               onClick={() => addTocart(product, product.id)}

@@ -30,7 +30,7 @@ const CartItem = ({ item }) => {
           </div>
           <div className=" flex gap-x-2 h-[36px] test-sm items-center ">
             {/* quatity */}
-            <div className="flex flex-1 gap-x-5 max-w-[100px]  items-center h-full border text-primary font-medium">
+            <div className="flex  gap-x-5 max-w-[100px]  items-center h-full border text-primary font-medium">
               <div
                 className="flex-1 flex items-center cursor-pointer"
                 onClick={() => decreaseAmout(id)}
@@ -38,7 +38,10 @@ const CartItem = ({ item }) => {
                 <IoMdRemove />
               </div>
               <div>{amount}</div>
-              <div onClick={() => increaseAmout(id)}>
+              <div
+                className="flex-1 flex items-center cursor-pointer"
+                onClick={() => increaseAmout(id)}
+              >
                 <IoMdAdd />
               </div>
             </div>

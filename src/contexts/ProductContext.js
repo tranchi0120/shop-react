@@ -8,22 +8,26 @@ export const productContext = createContext();
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get("https://fakestoreapi.com/products");
-        setProducts(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchProducts();
+    setLoading(true);
+    setTimeout(() => {
+      const fetchProducts = async () => {
+        try {
+          const response = await axios.get("https://fakestoreapi.com/products");
+          setProducts(response.data);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      setLoading(false);
+      fetchProducts();
+    }, 1500);
   }, []);
 
   return (
-    <productContext.Provider value={{ products, setProducts }}>
+    <productContext.Provider value={{ loading, products, setProducts }}>
       {children}
     </productContext.Provider>
   );
