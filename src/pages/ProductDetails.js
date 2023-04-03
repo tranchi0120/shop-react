@@ -18,6 +18,7 @@ const ProductDetails = () => {
   const product = products.find((item) => {
     return item.id === parseInt(id);
   });
+  
 
   if (!product) {
     return (
