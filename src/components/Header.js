@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 const Header = () => {
   const { isOpen, setIsOpen } = useContext(SidebarContext);
-  const { itemAmount, setItemAmount } = useContext(CartContext);
+  const { itemAmount } = useContext(CartContext);
   const [active, setActive] = useState(false);
 
   useEffect(() => {

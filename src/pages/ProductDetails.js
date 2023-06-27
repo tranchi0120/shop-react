@@ -1,7 +1,6 @@
 import React from "react";
 
 import { useParams } from "react-router-dom";
-import { IoMD } from "react-icons/io";
 import { productContext } from "../contexts/ProductContext";
 import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
